@@ -16,7 +16,8 @@ class Command(BaseCommand):
             try:
                 db_conn = connections['default']
             except OperationalError:
-                self.stdout.write('Veritabanı mevcut değil, 1 saniye bekliyor...')
+                self.stdout.write(
+                    'Veritabanı mevcut değil, 1 saniye bekliyor...')
                 time.sleep(1)
 
         self.stdout.write(self.style.SUCCESS('Veritabanı mevcut!'))
